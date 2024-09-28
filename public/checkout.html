@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('../img/background/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            align-items: center;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-total {
+            text-align: right;
+            padding: 10px 0;
+            font-weight: bold;
+            border-top: 1px solid #ddd;
+        }
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+        .remove-btn {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .remove-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total"></div>
+        <button class="checkout-btn" onclick="processCheckout()">Proceed</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+
+            fetch('get_cart.php')
+                .then(response => response.json())
+                .then(cart => {
+                    let total = 0;
+                    cart.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.classList.add('cart-item');
+
+                        const itemImage = document.createElement('img');
+                        itemImage.src = 'http://localhost/ip/' + item.image;  // Prepend base URL to filename
+                        itemElement.appendChild(itemImage);
+
+                        const itemTitle = document.createElement('div');
+                        itemTitle.textContent = item.title;
+                        itemElement.appendChild(itemTitle);
+
+                        const itemPrice = document.createElement('div');
+                        itemPrice.textContent = item.price;
+                        itemElement.appendChild(itemPrice);
+
+                        const removeButton = document.createElement('button');
+                        removeButton.textContent = 'Remove';
+                        removeButton.classList.add('remove-btn');
+                        removeButton.addEventListener('click', () => {
+                            removeFromCart(item.id, itemElement);
+                        });
+                        itemElement.appendChild(removeButton);
+
+                        cartItemsContainer.appendChild(itemElement);
+
+                        total += parseFloat(item.price.replace('₹', ''));
+                    });
+
+                    cartTotalContainer.textContent = `Total: ₹${total.toFixed(2)}`;
+                });
+        });
+
+        function removeFromCart(id, itemElement) {
+            fetch('remove_from_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id })
+            }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    itemElement.remove();
+                    updateTotal();
+                } else {
+                    console.error('Failed to remove item from cart');
+                }
+            });
+        }
+
+        function updateTotal() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+            let total = 0;
+            cartItemsContainer.querySelectorAll('.cart-item').forEach(item => {
+                const price = item.querySelector('div:nth-child(3)').textContent;
+                total += parseFloat(price.replace('', ''));
+            });
+            cartTotalContainer.textContent = `Total: ₹${total.toFixed(2)}`;
+        }
+
+        function processCheckout() {
+            // Redirect to order.html
+            window.location.href = 'order.html';
+        }
+    </script>
+</body>
+</html>

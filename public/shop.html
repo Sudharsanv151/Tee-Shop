@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeeShop - Online Shopping</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('../img/background/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #212529;
+        }
+        p{
+            font-size:13px;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            color: #28a745;
+        }
+
+        .navbar-brand:hover {
+            color: #218838;
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .product-card {
+            margin: 20px 0;
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .product-price {
+            color: #28a745;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* Styles for the added state */
+        .btn-added {
+            background-color: green;
+            border-color: green;
+            color: white;
+        }
+
+        .form-group{
+            font-size:11px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TeeShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkout.html">Checkout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><br><br><br>
+
+    <!-- Carousel -->
+   
+
+    <!-- Page Content -->
+    
+    <div class="col-lg-12">
+        <div class="row">
+            
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colblue.jpg" alt="Collar Tee"></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (blue)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="75">₹75.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="col-lg-2 col-md-6 mb-6 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundneck/rib2.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round (red)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="75">₹75.00</h5>
+                        <p class="card-text">NEXA Kids Round Neck Tee (100% cotton). Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundneck/rib3.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round (black)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="75">₹75.00</h5>
+                        <p class="card-text">NEXA Kids Round Neck Tee (100% cotton). Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundneck/rib4.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round (pink)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="75">₹75.00</h5>
+                        <p class="card-text">NEXA Kids Round Neck Tee (100% cotton). Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundneck/rib5.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round (blue)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="75">₹75.00</h5>
+                        <p class="card-text">NEXA Kids Round Neck Tee (100% cotton). Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-6 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundneck/ribcom.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Combo</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="400">₹400.00</h5>
+                        <p class="card-text">NEXA Kids Round Neck Tees Combo. Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/collarpic.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (blue)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="90">₹90.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colred.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (red)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="90">₹90.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colyel.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (yellow)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="90">₹90.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colblue.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (navy)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="90">₹90.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colmar.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar (brown)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="90">₹90.00</h5>
+                        <p class="card-text">REAL Premium Collar Tee (100% cotton). Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/collarshirt/colcombo2.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Collar Combo</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="520">₹520.00</h5>
+                        <p class="card-text">REAL Premium Collar Tees Combo. Available sizes:   S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/mixpic.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone (Red)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="80">₹80.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tee.<br> Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/mixpic2.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone (green)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="80">₹80.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tee. <br>Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/mixpic3.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone (navy)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="80">₹80.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tee.<br> Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/mixpic5.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone (yellow)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="80">₹80.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tee.<br> Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/mixblue.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone (blue)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="80">₹80.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tee.<br> Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/roundmix/c3.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Round Dual Tone Combo </a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="450">₹450.00</h5>
+                        <p class="card-text">NEXA Kids Dual-Tone Round Neck Tees Combo.<br> Available sizes: S, M, L, XL</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ★ ★</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/shorts.png" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts (blue)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="60">₹60.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts (100% cotton).<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/sh2.png" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts (red)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="60">₹60.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts (100% cotton).<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/sh3.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts (yellow)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="60">₹60.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts (100% cotton).<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/sh4.png" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts (gray)</a>
+                        </h4>
+                        <h5 class="product-price"  data-base-price="60">₹60.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts (100% cotton).<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/sh5.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts (black)</a>
+                        </h4>
+                        <h5 class="product-price" data-base-price="60">₹60.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts (100% cotton).<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-4 mb-4 product-card">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="../img/shorts/shortcombo.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title product-title">
+                            <a href="#">Shorts Combo</a>
+                        </h4>
+                        <h5 class="product-price"  data-base-price="320">₹320.00</h5>
+                        <p class="card-text">NEXA Kids Soft Fabric Shorts Combo.<br> Available sizes: S, M, L</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="sizeSelect">Select size:</label>
+                                <select class="form-control size-select" style="width: auto; display: inline-block;">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary add-to-cart" style="font-size: 12px; padding: 5px 10px;">Add to cart</button>
+
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">★ ★ ★ ☆</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; TeeShop 2024</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.textContent = 'Added!';
+                    this.classList.remove('btn-primary');
+                    this.classList.add('btn-added');
+    
+                    // Gather product details
+                    const productCard = this.closest('.product-card');
+                    const productTitle = productCard.querySelector('.product-title a').textContent;
+                    const productPrice = productCard.querySelector('.product-price').textContent;
+                    const productImage = productCard.querySelector('img').src;
+    
+                    const product = {
+                        title: productTitle,
+                        price: productPrice,
+                        image: productImage
+                    };
+    
+                    // Send the product to the backend server
+                    fetch('add_to_cart.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(product)
+                    }).then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Product added to cart');
+                        } else {
+                            console.error('Failed to add product to cart');
+                        }
+                    });
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        const sizeSelect = card.querySelector('.size-select');
+        const productPrice = card.querySelector('.product-price');
+        const basePrice = parseFloat(productPrice.getAttribute('data-base-price'));
+
+        sizeSelect.addEventListener('change', function() {
+            let newPrice = basePrice;
+
+            if (basePrice > 300) {
+                switch (sizeSelect.value) {
+                    case 'M':
+                        newPrice += 20;
+                        break;
+                    case 'L':
+                        newPrice += 40;
+                        break;
+                    case 'XL':
+                        newPrice += 60;
+                        break;
+                    case 'S':
+                    default:
+                        newPrice = basePrice;
+                        break;
+                }
+            } else {
+                switch (sizeSelect.value) {
+                    case 'M':
+                        newPrice += 5;
+                        break;
+                    case 'L':
+                        newPrice += 10;
+                        break;
+                    case 'XL':
+                        newPrice += 15;
+                        break;
+                    case 'S':
+                    default:
+                        newPrice = basePrice;
+                        break;
+                }
+            }
+
+            productPrice.textContent = `₹${newPrice.toFixed(2)}`;
+        });
+
+        card.querySelector('.add-to-cart').addEventListener('click', function() {
+            const selectedSize = sizeSelect.value;
+            const price = productPrice.textContent.replace('₹', '').trim();
+            const title = card.querySelector('.product-title a').textContent;
+            const image = card.querySelector('.card-img-top').src;
+
+            const data = {
+                title: title,
+                price: price,
+                image: image,
+                size: selectedSize
+            };
+
+            fetch('http://yourserver/your-script.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Product added to cart successfully');
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+});
+        
+    </script>
+    
+</body>
+</html>
